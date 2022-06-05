@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript" src="app.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <title>Demo</title>
+        <style>
+          .img-caption{
+            color: rgb(145, 145, 145);
+            font-size: small;
+          }
+        </style>
+    </head>
+    <body>
+        <h1 class="display-4" style="text-indent: 0.25em;">Demo</h1>
+        <nav class="navbar navbar-expand-lg sticky-top" style="background-color: #eee6ff">
+            <div class="container-fluid">
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                  <a class="nav-link" href="index.html">Home</a>
+                  <a class="nav-link active" aria-current="page" href = "#">Demo</a>
+                  <a class="nav-link"  href="dataset.html">Dataset Information</a>
+                  <a class="nav-link" href = "models.html">Model Information</a>
+                </div>
+              </div>
+            </div>
+          </nav>
+          <p></p>
+          
+          <div class="container">
+            <div class = "row">
+              <div class = "col-xs"></div>
+              <div class = "col">
+                <div class="row">
+                  <div class="col">
+                    <p class="h4">Demonstration Instructions</p>
+                  </div>
+                </div>
+
+
+                <div class="row">
+                  <div class="col">
+                    <p>
+                      The demonstration will take a 10 second recording from the user, convert it to a spectrogram, display the image, then display the results from the models. Before recording, select the language spoken in the dropdown menu. Then, hit record. The button will turn yellow indicating the recording has started. Continue speaking until the popup window appears to save the file. Save the file in the audio folder, do not change the name. The audio player will update with the recording so you can listen before proceeding. Next, click ”Convert to Spectrogram. Finally, click “Send to Models”. <br>
+                      The record and convert to spectrogram buttons will become disabled after a single use to prevent accidental overwrites to local data. Recording won’t begin until a language has been selected. Once recording has started, the language selection dropdown will be disabled. The convert to spectrogram button will unlock when the recording has finished. If the audio file isn’t sufficient, you want to run another test, or anything else happens, refresh the page.              
+                    </p>
+                  <div class="row">
+                  <div class="col">
+                    <p class="h4">Project Demonstration</p>
+                    <p></p>
+                  </div>
+                </div>
+
+
+                <div class="row">
+                  <div class="col-auto">
+                      <select id = "language" class="form-select">
+                        <option selected value="unknown">Select a language</option>
+                        <option value="en">English</option>
+                        <option value="de">German</option>
+                      </select>
+                      <select class = "visually-hidden" id="encodingTypeSelect">
+                        <option value="ogg"></option>
+                      </select>
+                      <div id="controls" style="text-align:center;">
+                        <br>
+                        <button class = "btn btn-secondary" id="recordButton">Record</button>
+                      </div>
+                      <pre id="log" class="visually-hidden"></pre>
+                      <br>
+                      <audio id ="audioplayer" controls>
+                        <source src="" type="audio/ogg">
+                      </audio>
+                      <a id = "recordinglink" href =""></a>
+                      
+                                  
+                  </div>
+                    <div class="col-3" style="text-align:center;">
+                      <button id="genspecto" class = "btn btn-secondary" onclick="saveRec(document.getElementById('recordinglink').innerText)" disabled>Convert to Spectrogram</button>
+                      <p></p>
+                      <img class = "img-fluid" id="spectrograph" src="">
+                      <p class = "img-caption" id = "specto-caption"></p>
+                    </div>
+                    <div class = "col">
+                      <div class = "row">
+                        <button id="getinference" class = "btn btn-secondary" onclick="callInf(document.getElementById('recordinglink').innerText)" disabled>Run Model Inference</button>
+                      </div>
+                      <p></p>
+                      <div class = "row row-cols-2">
+                        <div class = "col">
+                          <div class = "row"  style="text-align:center;">
+                          <p class = "h5">
+                            Google Inception
+                          </p>
+                        </div>
+                        <div class = "row align-items-center" >
+                          <div id = "google_card" class="card" style="width: 20rem;">
+                            <ul class="list-group list-group-flush">
+                              <li id = "google_pred" class="list-group-item">Predicted Language:</li>
+                              <li id = "google_raw" class="list-group-item">Raw Output:</li>
+                            </ul>
+                          </div>
+                        </div>
+                        </div>
+                        <div class = "col" >
+                          <div class = "row"  style="text-align:center;">
+                          <p class = "h5">
+                            DenseNet
+                          </p>
+                        </div>
+                        <div class = "row align-items-center" >
+                          <div id = "dense_card" class="card" style="width: 20rem;">
+                            <ul class="list-group list-group-flush">
+                              <li id = "dense_pred" class="list-group-item">Predicted Language:</li>
+                              <li id = "dense_raw" class="list-group-item">Raw Output:</li>
+                            </ul>
+                          </div>
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        
+          <script src="/js/WebAudioRecorder.min.js"></script>
+          <script src="/js/war_app.js"></script>
+    </body>
+    
+</html>

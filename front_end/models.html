@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript" src="app.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <title>Model Information</title>
+        <style>
+          .img-caption{
+            color: rgb(145, 145, 145);
+            font-size: small;
+          }
+          .page-footer{
+            color: rgb(117, 116, 116);
+            font-size: medium;
+          }
+        </style>
+
+    </head>
+    <body>
+        <h1 class="display-4" style="text-indent: 0.25em;">Model Information</h1>
+        <nav class="navbar navbar-expand-lg sticky-top" style="background-color: #eee6ff">
+            <div class="container-fluid">
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                  <a class="nav-link" href="index.html">Home</a>
+                  <a class="nav-link" href="demo.html">Demo</a>
+                  <a class="nav-link"  href="dataset.html">Dataset Information</a>
+                  <a class="nav-link active" aria-current="page" href = "#">Model Information</a>
+                </div>
+              </div>
+            </div>
+          </nav>
+          <p></p>
+          
+          <div class="container">
+            <div class = "row">
+              <div class = "col-xs"></div>
+              <div class = "col-auto">
+                <div class="row">
+                  <div class="col">
+                    <p class="h4">Google Inception Network</p>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="row  align-items-center">
+                    <div class ="col" style="text-align: center;">
+                      <img src="/source/naive_inception.png" alt="Naive Inception Module" class="img-fluid">
+                      <p class="img-caption">Naive Inception Model</p>
+                    </div>
+                    <div class ="col" style="text-align: left;">
+
+                      <p>
+                        The Google Inception Network was designed to handle the huge variation of information location within an image. A group of researchers decided that the solution was to have filters with multiple sizes that operate on the same level. Their explanation is further explained in their paper: <a href="https://arxiv.org/abs/1409.4842">Going Deeper with Convolutions</a> .To the side is the naïve inception model. It performs convolution on an input with three different sizes of filters. Max pooling is also performed than the outputs are concatenated for the next inception model. 
+                      </p>
+                      <br>
+                    </div>
+                    
+                  </div>
+                  <div class="row  align-items-center">
+                    <div class ="col">
+                      To make the model less computationally expensive, the researchers limited the number of input channels using a 1x1 convolution before 3x3 and 5x5 convolutions. This dimension reduced inception model because known as GoogLeNet (Inception V1). It contained 9 inception models stacked linearly. The entire network contains 27 layers, including pooling. It ends with global average pooling at the end of the last inception model. Below is an image of the architecture. 
+                    </div>
+                    
+                  </div>
+                  <div class = "row align-items-center">
+                    <div class ="col" style="text-align: center;">
+                      <img src="/source/Inceptionv1_architecture.png" alt="Inception V1 Architecture" class="img-fluid">
+                      <p class="img-caption">Inception V1 Architecture</p>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col">
+                      <p class="h4">DenseNet</p>
+                    </div>
+                  </div>
+                  <div class ="row">
+                    <div class="row  align-items-center ">
+                      <div class ="col align-text-bottom " style="text-align: center;">
+                        
+                        <img class="img-fluid" src="/source/dense_concat.png" alt="DenseNet Channel Concatenation">
+                        <p class = "img-caption ">DenseNet Channel Concatenation</p>
+                      </div>
+                      <div class ="col">
+                        DenseNet builds on the ResNet architecture by setting up each layer to obtain additional inputs from all preceding layers and pass on its own feature-amps to all leading layers. Concentration is used so that each layer receives collective knowledge from all preceding layers. The network can be thinner so a growth rate of k can be used to represent the additional number of channels for each layer.   
+                      </div>
+                      
+                    </div>
+                  </div>
+                  
+                    <div class="row align-items-center">
+                      <div class ="col">
+                        The animation shows concertation during forward propagation. Each composition layer consists of pre-activation batch normalization, ReLU, then a 3x3 convolutional layer with an output of feature maps for k channels. Further explanation of the DenseNet architecture can be found in the paper <a href="https://arxiv.org/abs/1608.06993">Densely Connected Convolutional Networks</a>. 
+                      </div>
+                      
+                      <div class ="col" style="text-align: center;">
+                        
+                        <img class="img-fluid" src="/source/dense_with_growth.png" alt="DenseNet with Growth Rate k">
+                        <p class = "img-caption">DenseNet with Growth Rate k</p>
+                        
+                      </div>
+                    </div>
+
+                    <div class ="row align-items-center" style="text-align: center;">
+                      <img class="img-fluid" src="/source/dense_process.gif" alt="Concatention during Forward Propagation">
+                      <p class = "img-caption">Concatention during Forward Propagation</p>
+                    </div>
+
+                  
+                    
+  
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+      
+          <p  class="page-footer  border-top" >
+            Google Inception Network Image Souces: <a href="https://arxiv.org/pdf/1409.4842v1.pdf">Going deeper with convolutions</a><br>
+            DenseNet Image Sources: <a href = "https://towardsdatascience.com/review-densenet-image-classification-b6631a8ef803">Review: DenseNet — Dense Convolutional Network (Image Classification)</a>
+          </p>
+        
+    </body>
+    
+</html>
