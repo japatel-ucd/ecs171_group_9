@@ -1,0 +1,17 @@
+audio_toolbox==0.2
+Flask==2.1.2
+Flask_Cors==3.0.10
+imageio==2.19.3
+keras==2.9.0
+librosa==0.9.1
+matplotlib==3.5.2
+numpy==1.22.3
+pandas==1.4.1
+Pillow==9.1.1
+requests==2.27.1
+scikit_learn==1.1.1
+SoundFile==0.10.3.post1
+speechpy==2.4
+tensorflow==2.9.1
+torch==1.11.0
+torchvision==0.12.0
