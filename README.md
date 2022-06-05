@@ -11,6 +11,9 @@ Austin Lew
 ## Project Summary
 Using existing CNN architectures to detect spoken language from an audio sample
 
+## Required Python Packages
+All necessary python packages have been included in the requirements.txt file at the head of the directory
+
 ## File Breakdown
 ### Dataset
 Contains the images used for training and testing the model.
