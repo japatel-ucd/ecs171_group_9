@@ -1,11 +1,11 @@
 # Group 9 Project
 ## Members
-Jayden Patel
-Will Yu
-Zhiyuan Li
-Donald Chan
-Brian Nguyen
-Andrew Brown
+Jayden Patel,
+Will Yu,
+Zhiyuan Li,
+Donald Chan,
+Brian Nguyen,
+Andrew Brown,
 Austin Lew
 
 ## Project Summary
